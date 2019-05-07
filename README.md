@@ -1,6 +1,6 @@
-# storyblok-blog
+# Nuxt + Storyblog: Blog test project
 
-> Awesome blog
+> This is just a personal test project, to learn Nuxt, Storyblog and the integration of Storyblog data.
 
 ## Build Setup
 
