@@ -1,55 +1,37 @@
 <template>
-  <section id="posts">
-    <PostPreview
-      v-for="post in posts"
-      :key="post.id"
-      :title="post.title"
-      :excerpt="post.previewText"
-      :thumbnailImage="post.thumbnailUrl" 
-      :id="post.id" />
-  </section>
+  <article class="home-content">
+
+    <section class="banner">
+      <div class="banner-title"><h1>{{title}}</h1></div>
+    </section>
+
+    <BlogPosts />
+
+  </article>
 </template>
 
 <script>
-import PostPreview from "@/components/Blog/PostPreview";
+import BlogPosts from '@/pages/blog/index';
 
 export default {
   components: {
-    PostPreview
+    BlogPosts
   },
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories", {
-        version: "draft",
-        starts_with: "blog/"
+      .get("cdn/stories/home", {
+        version: "draft"
       })
       .then(res => {
+        console.log(res);
+        const data = res.data.story.content;
         return {
-          posts: res.data.stories.map(bp => {
-            return {
-              id: bp.slug,
-              title: bp.content.title,
-              previewText: bp.content.summary,
-              thumbnailUrl: bp.content.thumbnail
-            };
-          })
+          aboutMe: data.aboutMe,
+          bannerImage: data.bannerImage,
+          portraitImage: data.portraitImage,
+          title: data.title
         };
       });
+    }
   }
-};
 </script>
-
-<style scoped lang="scss">
-#posts {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-@media (min-width: 35rem) {
-  #posts {
-    flex-direction: row;
-  }
-}
-</style>

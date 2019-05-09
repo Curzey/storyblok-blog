@@ -26,21 +26,3 @@ export default {
   }
 };
 </script>
-
-
-<style scoped lang="scss">
-.post-content {
-  width: 80%;
-  max-width: 500px;
-  margin: auto;
-  p {
-    white-space: pre-line;
-  }
-}
-.post-thumbnail {
-  height: 300px;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
