@@ -2,31 +2,49 @@
   <div>
     <TheHeader />
     <main class="main-content">
-      <nuxt />
+      <nuxt/>
     </main>
   </div>
 </template>
 
 <script>
-  import TheHeader from '@/components/TheHeader/TheHeader'
+import TheHeader from '@/components/TheHeader/TheHeader';
 
-  export default {
-    components: {
-      TheHeader
-    }
+export default {
+  components: {
+    TheHeader
   }
+}
 </script>
 
 
-<style>
-  * {
-    box-sizing: border-box;
+<style lang="scss">
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+.main-content {
+  margin-top: 4.5rem;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (max-width: 767px) {
+    width: auto
   }
-  body {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    margin: 0;
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 750px
   }
-  .main-content {
-    margin-top: 4.5rem;
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 970px
   }
+  @media (min-width: 1200px) {
+    width: 1170px
+  }
+}
 </style>

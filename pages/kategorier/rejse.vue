@@ -34,24 +34,23 @@ export default {
         starts_with: "blog/"
       })
       .then(res => {
-        console.log(res);
+          console.log(res);
         return {
           // Posts
           posts: res.data.stories
-          .filter(post => post.content.component == "post")
+          .filter(post => post.content.component == "post" && post.content.categories.includes("Rejse"))
           .map(bp => {
             return {
               id: bp.slug,
               title: bp.content.title,
               previewText: bp.content.summary,
-              thumbnailUrl: bp.content.thumbnail,
-              category: bp.content.categories
+              thumbnailUrl: bp.content.thumbnail
             };
           }),
           // Banner node in /Blog/Banner
           // Probably a bad way to get this data. 
           topSections: res.data.stories
-          .filter(topSection => topSection.content.component == "banner")
+          .filter(topSection => topSection.content.component == "banner-category")
           .map(topSection => {
             return {
               id: topSection.slug,
