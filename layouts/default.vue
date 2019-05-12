@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader/TheHeader';
+import TheHeader from "@/components/TheHeader/TheHeader";
 
 export default {
   components: {
     TheHeader
   }
-}
+};
 </script>

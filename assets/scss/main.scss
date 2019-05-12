@@ -1,4 +1,6 @@
 // SETTINGS
+@import 'settings/colors';
+@import 'settings/typography';
 @import 'settings/default';
 
 // LAYOUT
@@ -7,5 +9,4 @@
 // COMPONENTS
 @import 'components/posts';
 @import 'components/post';
-
-
+@import 'components/banner';
