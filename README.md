@@ -3,7 +3,7 @@
 > This is just a personal test project, to learn Nuxt, Storyblok and the integration of Storyblok data.
 
 ## To-do
-- [x] Optimize Async() calls.
+- [x] Optimize AsyncData() calls.
 - [x] Make dynamic category urls and .vue file
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
 - [ ] Delete About (om) page 
