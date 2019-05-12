@@ -1,12 +1,11 @@
-# Nuxt + Storyblog: Blog test project
+# Nuxt + Storyblok: Blog test project
 
-> This is just a personal test project, to learn Nuxt, Storyblog and the integration of Storyblog data.
+> This is just a personal test project, to learn Nuxt, Storyblok and the integration of Storyblok data.
 
 ## To-do
-- [x] Optimize Async() calls.
+- [x] Optimize AsyncData() calls.
 - [x] Make dynamic category urls and .vue file
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
-- [ ] Find a way to call `<TheHeader />` in default.vue to arrange it beneath banner
 - [ ] Delete About (om) page 
 - [x] Make _scss file structure, and remove template `<style>` tags
 - [ ] Add text shadow to banner heading
