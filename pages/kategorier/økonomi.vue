@@ -1,19 +1,19 @@
 <template>
   <div>
 
-      <Banner v-for="topSection in topSections"
-      :key="topSection.id"
-      :content="topSection.content" />
+      <Banner 
+        :key="topSection.id"
+        :content="topSection.content" />
 
     <section id="posts">
       <PostPreview
         v-for="post in posts"
+        :id="post.id"
+        :summary="post.summary"
+        :thumbnail="post.thumbnail"
         :key="post.id"
-        :title="post.title"
-        :excerpt="post.previewText"
-        :thumbnailImage="post.thumbnailUrl"
-        :id="post.id" />
-    </section>
+        :title="post.title" />
+    </section>  
     
   </div>
 </template>
@@ -27,38 +27,49 @@ export default {
     PostPreview,
     Banner
   },
-  asyncData(context) {
-    return context.app.$storyapi
+    async asyncData(context) {
+    // Posts
+    const posts = await context.app.$storyapi
       .get("cdn/stories", {
         version: "draft",
-        starts_with: "blog/"
+        starts_with: "artikler/okonomi/",
+        "filter_query": {
+          "component": {
+            "in": "post"
+          }
+        }
       })
       .then(res => {
-          console.log(res);
         return {
-          // Posts
           posts: res.data.stories
-          .filter(post => post.content.component == "post" && post.content.categories.includes("Økonomi"))
-          .map(bp => {
-            return {
-              id: bp.slug,
-              title: bp.content.title,
-              previewText: bp.content.summary,
-              thumbnailUrl: bp.content.thumbnail
-            };
-          }),
-          // Banner node in /Blog/Banner
-          // Probably a bad way to get this data. 
-          topSections: res.data.stories
-          .filter(topSection => topSection.content.component == "banner-category")
-          .map(topSection => {
-            return {
-              id: topSection.slug,
-              content: topSection.content
-            };
-          })
+            .map(bp => {
+              return {
+                id: bp.slug,
+                title: bp.content.title,
+                thumbnail: bp.content.thumbnail,
+                summary: bp.content.summary
+              };
+            })
         };
       });
+      // Banner
+     const topSection = await context.app.$storyapi
+      .get("cdn/stories/artikler/okonomi/banner-okonomi", {
+        version: "draft",
+        "filter_query": {
+          "component": {
+            "in": "banner-category"
+          }
+        }
+      })
+      .then(res => {     
+        console.log(res); 
+        return {
+          id: res.data.story.slug,
+          content: res.data.story.content
+        };
+      })    
+    return { posts: posts.posts, topSection: topSection };
   }
 };
 </script>

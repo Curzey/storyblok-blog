@@ -3,11 +3,11 @@
     :to="'/' + id">
     <article class="post-preview">
       <div
-        :style="{backgroundImage: 'url(' + thumbnailImage + ')'}"
+        :style="{backgroundImage: 'url(' + thumbnail + ')'}"
         class="post-preview-thumbnail"></div>
       <div class="post-preview-content">
         <h1>{{ title }}</h1>
-        <p>{{ excerpt }}</p>
+        <p>{{ summary }}</p>
       </div>
     </article>
   </nuxt-link>
@@ -20,11 +20,11 @@ export default {
       type: String,
       required: true
     },
-    excerpt: {
+    thumbnail: {
       type: String,
       required: true
     },
-    thumbnailImage: {
+    summary: {
       type: String,
       required: true
     },
