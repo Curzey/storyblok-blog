@@ -1,6 +1,6 @@
-# Nuxt + Storyblog: Blog test project
+# Nuxt + Storyblok: Blog test project
 
-> This is just a personal test project, to learn Nuxt, Storyblog and the integration of Storyblog data.
+> This is just a personal test project, to learn Nuxt, Storyblok and the integration of Storyblok data.
 
 ## To-do
 - [x] Optimize Async() calls.
