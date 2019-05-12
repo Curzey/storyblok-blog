@@ -12,7 +12,7 @@
 }
 
 @mixin backgroundGradient($colr1: #e66528, $colr2: #f5307c, $clip: initial) {
-    background: linear-gradient(45deg, $colr1 0%, $colr1 100%);
+    background: linear-gradient(45deg, $colr1 0%, $colr2 100%);
     -webkit-background-clip: $clip;
     -webkit-text-fill-color: transparent;
 }
