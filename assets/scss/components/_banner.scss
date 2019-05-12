@@ -23,9 +23,7 @@
         position: relative;
         z-index: 3;
         h1 {
-            background: linear-gradient(45deg, #e66528 0%, #f5307c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include backgroundGradient($clip: text);
             margin: 0;
         }
     }

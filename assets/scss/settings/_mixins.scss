@@ -1,0 +1,18 @@
+
+@mixin flexy($d: flex, $y: center, $x: center, $wrap: wrap, $dir: row) {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@mixin transition($s: 400ms) {
+    transition: all $s cubic-bezier(.32,2,.55,.27);
+}
+
+@mixin backgroundGradient($colr1: #e66528, $colr2: #f5307c, $clip: initial) {
+    background: linear-gradient(45deg, $colr1 0%, $colr1 100%);
+    -webkit-background-clip: $clip;
+    -webkit-text-fill-color: transparent;
+}

@@ -8,8 +8,7 @@
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
 - [ ] Delete About (om) page 
 - [x] Make _scss file structure, and remove template `<style>` tags
-- [ ] Add text shadow to banner heading
-- [ ] Add gradient to active nav-bar  
+- [x] Add gradient to active nav-bar  
 
 
 ## Build Setup

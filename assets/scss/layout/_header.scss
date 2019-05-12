@@ -15,7 +15,7 @@
       margin: 15px;
       color: $dark-text;
       position: relative;
-
+ 
       a {
         font-weight:400;
         color:inherit;
@@ -27,8 +27,9 @@
         left:0;
         width:0;
         height:2px;
-        background-color:$border-grey--dark;
+        @include backgroundGradient();
         content:"";
+        @include transition;
       }
 
       &.nuxt-link-exact-active,
