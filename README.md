@@ -6,7 +6,6 @@
 - [x] Optimize Async() calls.
 - [x] Make dynamic category urls and .vue file
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
-- [ ] Find a way to call `<TheHeader />` in default.vue to arrange it beneath banner
 - [ ] Delete About (om) page 
 - [x] Make _scss file structure, and remove template `<style>` tags
 
