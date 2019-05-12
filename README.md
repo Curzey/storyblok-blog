@@ -8,7 +8,7 @@
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
 - [ ] Find a way to call <TheHeader /> in default.vue to arrange it beneath banner
 - [ ] Delete About (om) page 
-- [ ] Make _scss file structure, delete all styles and begin new design
+- [x] Make _scss file structure, and remove template `<style>` tags
 
 
 ## Build Setup

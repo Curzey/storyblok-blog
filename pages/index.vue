@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="front-page">
 
       <Banner 
         :key="topSection.id"
         :content="topSection.content" />
 
-    <section id="posts">
+    <section class="posts">
       <PostPreview
         v-for="post in posts"
         :id="post.id"
@@ -35,10 +35,14 @@ export default {
         "filter_query": {
           "component": {
             "in": "post"
+          },
+          "featured": {
+            "in": true
           }
         }
       })
       .then(res => {
+        console.log(res);
         return {
           posts: res.data.stories
             .map(bp => {
@@ -66,19 +70,3 @@ export default {
   }
 };
 </script>
-
-
-<style scoped>
-#posts {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-@media (min-width: 35rem) {
-  #posts {
-    flex-direction: row;
-  }
-}
-</style>

@@ -4,7 +4,7 @@
         :key="topSection.id"
         :content="topSection.content" />
 
-    <section id="posts">
+    <section class="posts">
       <PostPreview
         v-for="post in posts"
         :id="post.id"
@@ -42,7 +42,7 @@ export default {
           posts: res.data.stories
             .map(bp => {
               return {
-                id: bp.slug,
+                id: bp.full_slug,
                 title: bp.content.title,
                 thumbnail: bp.content.thumbnail,
                 summary: bp.content.summary
@@ -70,18 +70,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-#posts {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-@media (min-width: 35rem) {
-  #posts {
-    flex-direction: row;
-  }
-}
-</style>
