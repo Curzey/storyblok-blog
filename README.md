@@ -2,6 +2,14 @@
 
 > This is just a personal test project, to learn Nuxt, Storyblog and the integration of Storyblog data.
 
+## To-do
+- [x] Optimize Async() calls.
+- [ ] Make _scss file structure, delete all styles and begin new design
+- [ ] Make dynamic category urls and .vue file
+- [ ] Find a way to call <TheHeader /> in default.vue to arrange it beneath banner
+- [ ] Delete About (om) page 
+
+
 ## Build Setup
 
 ``` bash
