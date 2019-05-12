@@ -9,6 +9,8 @@
 - [ ] Find a way to call `<TheHeader />` in default.vue to arrange it beneath banner
 - [ ] Delete About (om) page 
 - [x] Make _scss file structure, and remove template `<style>` tags
+- [ ] Add text shadow to banner heading
+- [ ] Add gradient to active nav-bar  
 
 
 ## Build Setup

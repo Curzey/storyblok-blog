@@ -2,19 +2,32 @@
     background-position:center;
     background-size:cover;
     height: 400px;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        top:0;
+        right:0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        content:"";
+        background-color:rgba($border-grey, .5);
+    }
 
     &-content {
         display:flex;
         height: 100%;
-        justify-content: space-between;
+        justify-content: center;
         align-items:center;
-    }
-    &-portrait {
-        height: 150px;
-        width:150px;
-        background-size:contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+        position: relative;
+        z-index: 4;
+        h1 {
+            background: linear-gradient(45deg, #E47B49 0%, #ea4c89 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
 
+    }
 }
