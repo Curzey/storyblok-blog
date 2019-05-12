@@ -4,10 +4,10 @@
 
 ## To-do
 - [x] Optimize Async() calls.
-- [ ] Make _scss file structure, delete all styles and begin new design
 - [ ] Make dynamic category urls and .vue file
 - [ ] Find a way to call <TheHeader /> in default.vue to arrange it beneath banner
 - [ ] Delete About (om) page 
+- [ ] Make _scss file structure, delete all styles and begin new design
 
 
 ## Build Setup
