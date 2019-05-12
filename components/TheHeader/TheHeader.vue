@@ -3,8 +3,8 @@
     <nav class="main-nav">
       <ul class="nav-links">
         <nuxt-link to="/" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
-        <nuxt-link to="/kategorier/økonomi" tag="li" class="nav-link"><a>Economy</a></nuxt-link>
-        <nuxt-link to="/kategorier/rejse" tag="li" class="nav-link"><a>Travel</a></nuxt-link>        
+        <nuxt-link to="/artikler/okonomi" tag="li" class="nav-link"><a>Economy</a></nuxt-link>
+        <nuxt-link to="/artikler/rejse" tag="li" class="nav-link"><a>Travel</a></nuxt-link>        
         <nuxt-link to="/om" tag="li" class="nav-link"><a>About</a></nuxt-link>
       </ul>
     </nav>

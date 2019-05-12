@@ -1,6 +1,5 @@
 <template>
   <div>
-
       <Banner 
         :key="topSection.id"
         :content="topSection.content" />
@@ -14,7 +13,6 @@
         :key="post.id"
         :title="post.title" />
     </section> 
-    
   </div>
 </template>
 
@@ -30,9 +28,9 @@ export default {
     async asyncData(context) {
     // Posts
     const posts = await context.app.$storyapi
-      .get("cdn/stories", {
+      .get('cdn/stories', {
         version: "draft",
-        starts_with: "artikler/rejse/",
+        starts_with: "artikler/" + context.params.categoryId,
         "filter_query": {
           "component": {
             "in": "post"
@@ -54,7 +52,7 @@ export default {
       });
       // Banner
      const topSection = await context.app.$storyapi
-      .get("cdn/stories/artikler/rejse/banner-rejse", {
+      .get("cdn/stories/artikler/" + context.params.categoryId + "/banner", {
         version: "draft",
         "filter_query": {
           "component": {
@@ -63,7 +61,6 @@ export default {
         }
       })
       .then(res => {     
-        console.log(res); 
         return {
           id: res.data.story.slug,
           content: res.data.story.content
@@ -71,37 +68,6 @@ export default {
       });
     return { posts: posts.posts, topSection: topSection };
   }
-  // asyncData(context) {
-  //   return context.app.$storyapi
-  //     .get("cdn/stories", {
-  //       version: "draft",
-  //       starts_with: "artikler/rejse/"
-  //     })
-  //     .then(res => {      
-  //       return {
-  //         // Posts
-  //         posts: res.data.stories
-  //         .map(bp => {
-  //           return {
-  //             id: bp.slug,
-  //             title: bp.content.title,
-  //             previewText: bp.content.summary,
-  //             thumbnailUrl: bp.content.thumbnail
-  //           };
-  //         }),
-  //         // Banner node in /Blog/Banner
-  //         // Probably a bad way to get this data. 
-  //         topSections: res.data.stories
-  //         .filter(topSection => topSection.content.component == "banner-category")
-  //         .map(topSection => {
-  //           return {
-  //             id: topSection.slug,
-  //             content: topSection.content
-  //           };
-  //         })
-  //       };
-  //     });
-  // }
 };
 </script>
 

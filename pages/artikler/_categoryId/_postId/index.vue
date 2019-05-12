@@ -13,7 +13,7 @@
 export default {
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories/blog/" + context.params.postId, {
+      .get('cdn/stories/artikler/' + context.params.categoryId + '/' + context.params.postId, {
         version: "draft"
       })
       .then(res => {

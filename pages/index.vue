@@ -43,7 +43,7 @@ export default {
           posts: res.data.stories
             .map(bp => {
               return {
-                id: bp.slug,
+                id: bp.full_slug,
                 title: bp.content.title,
                 thumbnail: bp.content.thumbnail,
                 summary: bp.content.summary
@@ -66,39 +66,6 @@ export default {
   }
 };
 </script>
-  // asyncData(context) {
-  //   return context.app.$storyapi
-  //     .get("cdn/stories", {
-  //       version: "draft",
-  //       starts_with: "blog/"
-  //     })
-  //     .then(res => {
-  //       return {
-  //         // Posts
-  //         posts: res.data.stories
-  //         .filter(post => post.content.component == "post")
-  //         .map(bp => {
-  //           return {
-  //             id: bp.slug,
-  //             title: bp.content.title,
-  //             previewText: bp.content.summary,
-  //             thumbnailUrl: bp.content.thumbnail,
-  //             category: bp.content.categories
-  //           };
-  //         }),
-  //         // Banner node in /Blog/Banner
-  //         // Probably a bad way to get this data. 
-  //         topSections: res.data.stories
-  //         .filter(topSection => topSection.content.component == "banner")
-  //         .map(topSection => {
-  //           return {
-  //             id: topSection.slug,
-  //             content: topSection.content
-  //           };
-  //         })
-  //       };
-  //     });
-  // }
 
 
 <style scoped>
