@@ -1,30 +1,28 @@
 .banner {
-    background-position:center;
-    background-size:cover;
-    height: 400px;
+    background: #6D42A3;
+    background: linear-gradient(to top, #fff 0%, lighten($primary-color, 5%) 30%, $primary-color 100%);    
+    padding-top: 4.5em;
+    padding-bottom: 18.5em;
     position: relative;
 
-    &:after {
-        position: absolute;
-        top:0;
-        right:0;
-        bottom: 0;
-        left: 0;
-        z-index: 2;
-        content:"";
-        background-color:rgba($border-grey, .5);
+    &-content {
+        text-align:center;
+    }
+    &-title h1 {
+        color:$light-text;
     }
 
-    &-content {
-        display:flex;
-        height: 100%;
-        justify-content: center;
-        align-items:center;
-        position: relative;
-        z-index: 3;
-        h1 {
-            @include backgroundGradient($clip: text);
-            margin: 0;
-        }
-    }
-}
+  }
+  .banner::before {
+    background-image: url(../../assets/images/banner-shape.png);
+    background-size: 2880px 560px;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    position: absolute;
+    width: 100%;
+    height: 35em;
+    bottom: 0;
+    left: 0;
+    pointer-events:none;
+  }

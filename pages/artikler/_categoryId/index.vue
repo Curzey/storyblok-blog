@@ -4,7 +4,7 @@
         :key="topSection.id"
         :content="topSection.content" />
 
-    <section class="posts">
+    <section class="posts posts--small">
       <PostPreview
         v-for="post in posts"
         :id="post.id"

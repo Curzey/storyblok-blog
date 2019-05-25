@@ -6,7 +6,7 @@
 - [x] Optimize AsyncData() calls.
 - [x] Make dynamic category urls and .vue file
 - [ ] TheHeader: Get dynamic routes based on categories in backend 
-- [ ] Delete About (om) page 
+- [ ] Create teaser of About Me on Frontpage
 - [x] Make _scss file structure, and remove template `<style>` tags
 - [x] Add gradient to active nav-bar  
 

@@ -1,5 +1,6 @@
 
   .main-nav {
+    background-color: $primary-color;
     &__links {
       list-style: none;
       margin: 0;
@@ -8,12 +9,11 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      border-bottom: 1px solid $border-grey;
       padding: 15px;
     }
     &__link {
       margin: 15px;
-      color: $dark-text;
+      color: $light-text;
       position: relative;
  
       a {
@@ -29,12 +29,11 @@
         height:2px;
         @include backgroundGradient();
         content:"";
-        @include transition;
+        @include transition($ease: $ease--bounce);
       }
 
       &.nuxt-link-exact-active,
       &:hover {
-        color: $dark-text--light;
         &:after {
           width: 100%;
         }

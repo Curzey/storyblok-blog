@@ -1,31 +1,66 @@
+
 .posts {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  @media (min-width: 35rem) {
-    flex-direction: row;
+
+  // General
+  margin-top: 130px;
+  @include flexy($y: stretch, $x: flex-start);
+  .post-preview {
+    &--inner {
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      @include transition;      
+      height:100%;
+    }
+    &-thumbnail {
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+    }
+    &:hover {
+      .post-preview--inner {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);      
+      }
+    }
+  }
+
+  // Big ones
+  &--big {
+    > a {
+      flex: 0 1 50%;
+      display:block;   
+    }
+    .post-preview {
+      height: 100%;        
+      padding: 10px;        
+      
+      &-thumbnail {
+        height: 250px;
+      }
+      &-content {
+        padding: 10px;
+      }
+    }
+  }
+
+  // Small ones
+  &--small {
+    .post-preview {
+      width: 90%;
+      height: 20rem;
+      margin: 1rem;
+      @media (min-width: $xs) {
+        width: 25rem;
+      }
+      &-thumbnail {
+        height: 10rem;
+      }
+      &--content {
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+
   }
 }
 
-.post-preview {
-  border-radius: 3px;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
-  width: 90%;
-  height: 20rem;
-  margin: 1rem;
-  @media (min-width: 35rem) {
-    width: 25rem;
-  }
-}
-.post-preview-thumbnail {
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 10rem;
-}
-.post-preview-content {
-  text-align: center;
-  padding: 1rem;
-}
+

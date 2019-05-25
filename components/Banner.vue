@@ -1,6 +1,7 @@
 <template>
     <div class="banner-outer">
-        <article class="banner" :style="{ backgroundImage: 'url(' + content.image + ')' }">
+        <article class="banner" > 
+            <!-- :style="{ backgroundImage: 'url(' + content.image + ')' }" -->
             
             <div class="banner-content container">
                 <div class="banner-title">

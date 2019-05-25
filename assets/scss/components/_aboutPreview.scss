@@ -1,0 +1,51 @@
+
+
+.about-preview {
+    &--inner {
+        display:flex;
+    }
+    &__portrait {
+        flex: 0 1 200px;
+        border-radius: 50%;
+
+        &-image {
+            height: 200px;
+            width: 200px;
+            background-position:center;
+            background-size:cover;        
+            border-radius: 100%;
+            position:relative;
+            overflow:hidden;                
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            
+            &::after {
+                position:absolute;
+                content:"";
+                background-color: $light-grey;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                z-index: -1;
+                
+            }
+        }
+    }
+    &__text {
+        flex: 1 1 auto;
+        padding-left: 50px;
+        max-width: 800px;
+    }
+    &__teaser {
+        p:first-of-type:first-letter {
+            font-size: calc(60px + 0.75vw);
+            line-height: 40px;
+            color: $primary-color;
+            float: left;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 5px;
+            font-family: Sansita One;            
+          }
+    }
+}

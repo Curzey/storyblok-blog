@@ -1,32 +1,31 @@
 /*
 * BASIC
 */
+
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$-xs: #{$xs} - 1;
+$-sm: #{$sm} - 1;
+$-md: #{$md} - 1;
+$-lg: #{$lg} - 1;
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  @media (max-width: 767px) {
+  @media (max-width: $-sm) {
     width: auto;
   }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: $sm) and (max-width: $-md) {
     width: 750px;
   }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: $md) and (max-width: $-lg) {
     width: 970px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: $lg) {
     width: 1170px;
   }
-}
-
-/*
-* RESET
-*/
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  background-color:$light-grey;    
 }

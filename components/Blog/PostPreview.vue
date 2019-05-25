@@ -2,12 +2,14 @@
   <nuxt-link
     :to="'/' + id">
     <article class="post-preview">
-      <div
-        :style="{backgroundImage: 'url(' + thumbnail + ')'}"
-        class="post-preview-thumbnail"></div>
-      <div class="post-preview-content">
-        <h1>{{ title }}</h1>
-        <p>{{ summary }}</p>
+      <div class="post-preview--inner">
+        <div
+          :style="{backgroundImage: 'url(' + thumbnail + ')'}"
+          class="post-preview-thumbnail"></div>
+        <div class="post-preview-content">
+          <h3>{{ title }}</h3>
+          <p>{{ summary }}</p>
+        </div>
       </div>
     </article>
   </nuxt-link>

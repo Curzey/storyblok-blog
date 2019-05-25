@@ -2,6 +2,7 @@
   <section id="about-page">
     <h1>{{ title }}</h1>
     <p>{{ content }}</p>
+    <img :src="portrait"/>
   </section>
 </template>
 
@@ -13,7 +14,8 @@ export default {
     }).then(res => {
       return {
         title: res.data.story.content.title,
-        content: res.data.story.content.content
+        content: res.data.story.content.content,
+        portrait: res.data.story.content.portrait
       }
     })
   }

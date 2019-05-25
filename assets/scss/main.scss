@@ -1,13 +1,18 @@
 // SETTINGS
+@import 'settings/reset';
 @import 'settings/colors';
+@import 'settings/mixins';
 @import 'settings/typography';
 @import 'settings/default';
-@import 'settings/mixins';
 
 // LAYOUT
 @import 'layout/header';
+@import 'layout/body';
+@import 'layout/footer';
 
 // COMPONENTS
 @import 'components/posts';
 @import 'components/post';
 @import 'components/banner';
+@import 'components/aboutPreview';
+
