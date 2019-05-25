@@ -8,7 +8,7 @@
 
         <!-- About preview text side -->
         <div class="about-preview__text">
-            <h2 class="about-preview__title colorful">{{ content.teaser_title }}</h2>
+            <h2 class="about-preview__title">{{ content.teaser_title }}</h2>
             <div class="about-preview__teaser" v-html="teaser"></div>
         </div>
     </div>
