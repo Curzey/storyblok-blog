@@ -1,18 +1,23 @@
 <template>
   <div>
-      <Banner 
-        :key="topSection.id"
-        :content="topSection.content" />
+    <Banner 
+      :key="topSection.id"
+      :content="topSection.content" />
 
-    <section class="posts posts--small">
-      <PostPreview
-        v-for="post in posts"
-        :id="post.id"
-        :summary="post.summary"
-        :thumbnail="post.thumbnail"
-        :key="post.id"
-        :title="post.title" />
-    </section> 
+    <div class="container">
+      <div class="filter-wrapper">
+        <input type="text" v-model="filter" placeholder="Filter title.."/>
+        <label>Filter title:</label>
+      </div>
+  
+      <section class="posts posts--small">
+          <PostPreview
+          v-for="post in filteredList"
+          :key="post.id"
+          :content="post.content" />
+      </section> 
+    </div>
+    
   </div>
 </template>
 
@@ -25,9 +30,14 @@ export default {
     PostPreview,
     Banner
   },
-    async asyncData(context) {
+
+  // Fetch data with async await
+  async asyncData(context) {
+
     // Posts
     const posts = await context.app.$storyapi
+
+      // get data based on params from api
       .get('cdn/stories', {
         version: "draft",
         starts_with: "artikler/" + context.params.categoryId,
@@ -37,21 +47,22 @@ export default {
           }
         }
       })
+
+      // return a promise containing the data as an object
       .then(res => {
         return {
           posts: res.data.stories
-            .map(bp => {
+            .map(bp => {           
               return {
                 id: bp.full_slug,
-                title: bp.content.title,
-                thumbnail: bp.content.thumbnail,
-                summary: bp.content.summary
+                content: bp.content     
               };
             })
         };
       });
-      // Banner
-     const topSection = await context.app.$storyapi
+
+    // Banner
+    const topSection = await context.app.$storyapi
       .get("cdn/stories/artikler/" + context.params.categoryId + "/banner", {
         version: "draft",
         "filter_query": {
@@ -67,6 +78,27 @@ export default {
         };
       });
     return { posts: posts.posts, topSection: topSection };
+  },
+
+  data() {
+    return {
+      // container for search chars, to match up with post data
+      filter: ''
+    }
+  },
+
+  computed: {
+
+    // Filter functionality
+    filteredList() {
+      // compare post titles to search chars
+      return this.posts.filter(post => {
+        return post.content.title.toLowerCase().includes(this.filter.toLowerCase())
+      })
+    }
+
   }
+
 };
 </script>
+

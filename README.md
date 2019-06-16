@@ -1,14 +1,22 @@
 # Nuxt + Storyblok: Blog test project
 
 > This is just a personal test project, to learn Nuxt, Storyblok and the integration of Storyblok data.
+> If you want to try it out, you'll need your own Storyblok backend and API key. 
 
 ## To-do
 - [x] Optimize AsyncData() calls.
 - [x] Make dynamic category urls and .vue file
-- [ ] TheHeader: Get dynamic routes based on categories in backend 
-- [ ] Create teaser of About Me on Frontpage
+- [x] Create teaser of About Me on Frontpage
 - [x] Make _scss file structure, and remove template `<style>` tags
 - [x] Add gradient to active nav-bar  
+- [.] Make a filtering function on category pages
+    - [x] Functionality
+    - [ ] Styling
+    - [ ] Make it a re-usable component
+- [ ] Give posts tags that can also be used in the filtering
+- [ ] Create pagination on the category pages
+- [ ] Animations
+- [ ] Guide to the CMS setup to help others
 
 
 ## Build Setup

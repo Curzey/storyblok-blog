@@ -24,7 +24,6 @@ export default {
         version: "draft"
       })
       .then(res => {
-        console.log(res);
         return {
           image: res.data.story.content.thumbnail,
           title: res.data.story.content.title,
