@@ -9,7 +9,7 @@
 - [x] Create teaser of About Me on Frontpage
 - [x] Make _scss file structure, and remove template `<style>` tags
 - [x] Add gradient to active nav-bar  
-- [.] Make a filtering function on category pages
+- Make a filtering function on category pages
     - [x] Functionality
     - [ ] Styling
     - [ ] Make it a re-usable component
