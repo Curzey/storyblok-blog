@@ -1,14 +1,14 @@
 <template>
   <nuxt-link
-    :to="'/' + id">
+    :to="'/' + content.id">
     <article class="post-preview">
       <div class="post-preview--inner">
         <div
-          :style="{backgroundImage: 'url(' + thumbnail + ')'}"
+          :style="{backgroundImage: 'url(' + content.thumbnail + ')'}"
           class="post-preview-thumbnail"></div>
         <div class="post-preview-content">
-          <h3>{{ title }}</h3>
-          <p>{{ summary }}</p>
+          <h3>{{ content.title }}</h3>
+          <p>{{ content.summary }}</p>
         </div>
       </div>
     </article>
@@ -18,20 +18,8 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    thumbnail: {
-      type: String,
-      required: true
-    },
-    summary: {
-      type: String,
-      required: true
-    },
-    id: {
-      type: String,
+    content: {
+      type: Object,
       required: true
     }
   }

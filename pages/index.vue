@@ -14,12 +14,9 @@
 
       <section class="posts posts--big">
         <PostPreview
-          v-for="post in posts"
-          :id="post.id"
-          :summary="post.summary"
-          :thumbnail="post.thumbnail"
-          :key="post.id"
-          :title="post.title" />
+        v-for="post in posts"
+        :key="post.id"
+        :content="post.content" />
       </section> 
       
     </article>
@@ -54,15 +51,12 @@ export default {
         }
       })
       .then(res => {
-        console.log(res);
         return {
           posts: res.data.stories
             .map(bp => {
               return {
                 id: bp.full_slug,
-                title: bp.content.title,
-                thumbnail: bp.content.thumbnail,
-                summary: bp.content.summary
+                content: bp.content
               };
             })
         };

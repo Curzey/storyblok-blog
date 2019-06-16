@@ -1,6 +1,7 @@
 
   .main-nav {
-    background-color: $primary-color;
+    background-color: $light-grey;
+    border-bottom: 1px solid $border-grey--dark;
     &__links {
       list-style: none;
       margin: 0;
@@ -9,15 +10,16 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      padding: 15px;
+      padding: 10px;
+
     }
     &__link {
       margin: 15px;
-      color: $light-text;
+      color: $dark-text;
       position: relative;
  
       a {
-        font-weight:400;
+        font-weight:600;
         color:inherit;
       }
 
