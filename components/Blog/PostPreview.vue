@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="'/' + content.id">
+    :to="'/' + id">
     <article class="post-preview">
       <div class="post-preview--inner">
         <div
@@ -20,6 +20,10 @@ export default {
   props: {
     content: {
       type: Object,
+      required: true
+    },
+    id: {
+      type: String,
       required: true
     }
   }

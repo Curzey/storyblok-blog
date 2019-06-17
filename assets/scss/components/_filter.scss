@@ -1,5 +1,101 @@
 
 .filter-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+
+    &__inner {
+        position: relative;       
+
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            @include backgroundGradient();
+            content:"";
+            width: 50%;
+        }
+
+        input {
+            width: 300px;
+            color: $dark-text;            
+            font-size: inherit;
+            font-family: inherit;
+            padding: 10px 20px;
+            border: 1px solid transparent;
+            transition: background-color 0.3s ease-in-out;
+
+            &:focus {
+                outline: none;          
+                
+                & ~ .bottom {
+                    transform-origin: bottom left;
+                    transform: scaleX(1);
+                }
+
+                & ~ .right {
+                    transform-origin: bottom right;
+                    transform: scaleY(1);
+                }
+
+                & ~ .top {
+                    transform-origin: top right;
+                    transform: scaleX(1);
+                }
+
+                & ~ .left {
+                    transform-origin: top left;
+                    transform: scaleY(1);
+                } 
+            }
+
+            &::placeholder {
+                color: $dark-text    
+            }
+
+        }         
+            
+        // Lines
+        span {
+            position: absolute;
+            @include backgroundGradient();
+            transition: transform 0.5s ease;
+
+            &.bottom,
+            &.top {
+                height: 2px;
+                left: 0;
+                right: 0;
+                transform: scaleX(0);
+            }
+                
+            &.left,
+            &.right {
+                width: 2px;
+                top: 0;
+                bottom: 0;
+                transform: scaleY(0);
+            }
+                
+            &.bottom {
+                bottom: 0;
+                transform-origin: bottom right;
+            }
+                     
+            &.right {
+                right: 0;
+                transform-origin: top right;
+            }
+
+            &.top {
+                top: 0;
+                transform-origin: top left;
+            }
+
+            &.left {
+                left: 0;
+                transform-origin: bottom left;
+            }
+        }
+    }
 }

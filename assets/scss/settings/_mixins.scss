@@ -9,18 +9,20 @@
 
 $ease--normal: cubic-bezier(.25,.8,.25,1);
 $ease--bounce: cubic-bezier(.32,2,.55,.27);
+
 @mixin transition($s: 400ms, $ease: $ease--normal) {
     transition: all $s $ease;
 }
 
-@mixin backgroundGradient($colr1: #e66528, $colr2: #f5307c, $clip: initial) {
+@mixin backgroundGradient($colr1: $primary-color, $colr2: #3839b1, $clip: initial) {
     background: linear-gradient(45deg, $colr1 0%, $colr2 100%);
     -webkit-background-clip: $clip;
     -webkit-text-fill-color: transparent;
 }
 
-@mixin backgroundGradient2($colr1: $primary-color, $colr2: darken($primary-color, 15%), $clip: initial) {
-    background: linear-gradient(45deg, $colr1 0%, $colr2 100%);
-    -webkit-background-clip: $clip;
-    -webkit-text-fill-color: transparent;
+@mixin spacing($top: 80px, $bottom: 80px, $right: 0, $left: 0) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-left: $right;
+    padding-right: $left;
 }

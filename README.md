@@ -8,16 +8,21 @@
 - [x] Make dynamic category urls and .vue file
 - [x] Create teaser of About Me on Frontpage
 - [x] Make _scss file structure, and remove template `<style>` tags
-- [x] Add gradient to active nav-bar  
 - Make a filtering function on category pages
     - [x] Functionality
-    - [ ] Styling
+    - [x] Styling
     - [ ] Make it a re-usable component
-- [ ] Give posts tags that can also be used in the filtering
+- Give posts tags that can also be used in the filtering and make a component that lists those on post-preview and the post itself.
+    - [ ] Tags and filtering
+    - [ ] Component
 - [ ] Create pagination on the category pages
 - [ ] Animations
+- [ ] Add vuex so i don't have to fetch posts on both index.vue, /artikler/_categoryId/index.vue and /artikler/_categoryId/_postId/index.vue
+- [ ] Create component that lists all categories as inline labels
+- [ ] Make the site responsive
 - [ ] Guide to the CMS setup to help others
-
+- [ ] Publish a test site on Github Pages with placeholder content from a placeholder branch. 
+ 
 
 ## Build Setup
 

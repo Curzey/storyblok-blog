@@ -6,15 +6,23 @@
 
     <div class="container">
       <div class="filter-wrapper">
-        <input type="text" v-model="filter" placeholder="Filter title.."/>
-        <label>Filter title:</label>
+        <div class="filter-wrapper__inner">
+          <input type="text" v-model="filter" placeholder="Filter title..."/>
+          <span class="bottom"></span>
+          <span class="right"></span>
+          <span class="top"></span>
+          <span class="left"></span>
+        </div>
       </div>
-  
-      <section class="posts posts--small">
+     
+      <section class="posts">
+        <div class="posts-grid">
           <PostPreview
-          v-for="post in filteredList"
-          :key="post.id"
-          :content="post.content" />
+            v-for="post in filteredList"
+            :key="post.id"
+            :id="post.id"
+            :content="post.content" />
+        </div>
       </section> 
     </div>
     
@@ -36,7 +44,6 @@ export default {
 
     // Posts
     const posts = await context.app.$storyapi
-
       // get data based on params from api
       .get('cdn/stories', {
         version: "draft",
@@ -52,7 +59,8 @@ export default {
       .then(res => {
         return {
           posts: res.data.stories
-            .map(bp => {           
+            .map(bp => {      
+              console.log(bp);     
               return {
                 id: bp.full_slug,
                 content: bp.content     
@@ -83,12 +91,11 @@ export default {
   data() {
     return {
       // container for search chars, to match up with post data
-      filter: ''
+      filter: '',
     }
   },
 
   computed: {
-
     // Filter functionality
     filteredList() {
       // compare post titles to search chars

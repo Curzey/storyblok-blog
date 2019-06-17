@@ -12,11 +12,15 @@
           :content="about.content" />
         </section>
 
-      <section class="posts posts--big">
-        <PostPreview
-        v-for="post in posts"
-        :key="post.id"
-        :content="post.content" />
+      <section class="posts">
+        <h2>Featured posts</h2>
+        <div class="posts-grid">
+          <PostPreview
+            v-for="post in posts"
+            :key="post.id"
+            :id="post.id"
+            :content="post.content" />
+        </div>
       </section> 
       
     </article>
