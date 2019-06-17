@@ -60,7 +60,6 @@ export default {
         return {
           posts: res.data.stories
             .map(bp => {      
-              console.log(bp);     
               return {
                 id: bp.full_slug,
                 content: bp.content     
