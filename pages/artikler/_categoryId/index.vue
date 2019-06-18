@@ -12,6 +12,7 @@
           <span class="right"></span>
           <span class="top"></span>
           <span class="left"></span>
+          <ion-icon name="search" size="small"></ion-icon>          
         </div>
       </div>
      

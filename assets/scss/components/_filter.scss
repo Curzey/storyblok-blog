@@ -6,27 +6,29 @@
     &__inner {
         position: relative;       
 
-        &:after {
+        ion-icon {
             position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            @include backgroundGradient();
-            content:"";
-            width: 50%;
+            left: 13px;
+            top:50%;
+            transform:translate(-50%,-50%);
+            @include transition;
         }
-
+        
         input {
             width: 300px;
             color: $dark-text;            
-            font-size: inherit;
+            font-size: 16px;
             font-family: inherit;
-            padding: 10px 20px;
+            padding: 12px 26px;
             border: 1px solid transparent;
             transition: background-color 0.3s ease-in-out;
 
             &:focus {
                 outline: none;          
+
+                & ~ ion-icon {
+                    opacity: 0;
+                }
                 
                 & ~ .bottom {
                     transform-origin: bottom left;

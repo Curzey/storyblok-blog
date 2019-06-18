@@ -13,6 +13,9 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: pkg.description }
     ],
+    script: [
+      { src: 'https://unpkg.com/ionicons@4.5.9-1/dist/ionicons.js' }
+    ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ]
