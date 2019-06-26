@@ -4,13 +4,13 @@
 > If you want to try it out, you'll need your own Storyblok backend and API key. 
 
 ## To-do
-- [x] Optimize AsyncData() calls.
-- [x] Make dynamic category urls and .vue file
-- [x] Create teaser of About Me on Frontpage
-- [x] Make _scss file structure, and remove template `<style>` tags
+- [x] ~Optimize AsyncData() calls.~
+- [x] ~Make dynamic category urls and .vue file~
+- [x] ~Create teaser of About Me on Frontpage~
+- [x] ~Make _scss file structure, and remove template `<style>` tags~
 - Make a filtering function on category pages
-    - [x] Functionality
-    - [x] Styling
+    - [x] ~Functionality~
+    - [x] ~Styling~
     - [ ] Make it a re-usable component
 - Give posts tags that can also be used in the filtering and make a component that lists those on post-preview and the post itself.
     - [ ] Tags and filtering
@@ -18,6 +18,7 @@
 - [ ] Create pagination on the category pages
 - [ ] Animations
 - [ ] Add vuex so i don't have to fetch posts on both index.vue, /artikler/_categoryId/index.vue and /artikler/_categoryId/_postId/index.vue
+        *Or simply find a more optimized way to store the data, maybe [The Factory Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern)*
 - [ ] Create component that lists all categories as inline labels
 - [ ] Make the site responsive
 - [ ] Guide to the CMS setup to help others
